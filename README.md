@@ -1,4 +1,13 @@
-# ng2-webpack
+#Prototype for Stitched Up Dialogue Engine
+
+Work in progress... based on **ng2-webpack** starter
+
+A prototype Dialogue Engine for *Stitched Up*
+
+___
+
+## ng2-webpack info
+
 A complete, yet simple, starter for Angular 2 using webpack
 
 Inspired by [Angular2 Webpack Starter](https://github.com/AngularClass/angular2-webpack-starter) & [Angular 1 Webpack workflow](https://github.com/Foxandxss/angular-webpack-workflow).
