@@ -7,7 +7,7 @@ import '../style/app.scss';
 import {Api} from './services/api/api';
 import {Home} from './components/home/home';
 import {About} from "./components/about/about";
-
+import {Scene} from './components/scene/scene';
 /*
  * App Component
  * Top Level Component
@@ -22,7 +22,8 @@ import {About} from "./components/about/about";
 })
 @RouteConfig([
     {path: '/', component: Home, name: 'Home'},
-    {path: '/About', component: About, name: 'About'}
+    {path: '/About', component: About, name: 'About'},
+    {path: '/Scene', component: Scene, name: 'Scene'}
 ])
 export class App {
     url: string = 'http://www.crissxross.net/';
