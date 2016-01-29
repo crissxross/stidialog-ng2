@@ -1,6 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 
+import {Api} from 'app/services/api/api';
+
 @Component({
     selector: 'home',
     directives: [...FORM_DIRECTIVES],
@@ -10,7 +12,7 @@ import {FORM_DIRECTIVES} from 'angular2/common';
 })
 export class Home implements OnInit {
 
-    constructor() {
+    constructor(public api: Api) {
         // Do stuff
     }
 

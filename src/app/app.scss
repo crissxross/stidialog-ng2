@@ -3,8 +3,8 @@
     display: block;
 }
 header {
-    background-color: #434136;
-    padding: 16px;
+    // background-color: #202020;
+    padding: 8px 16px;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,10 +12,12 @@ header {
     // box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 main {
+    height: 768px;
+    width: 576px;
     padding: 1em;
-    // font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin-top: 50px;
+    margin: 34px auto;
+    background-color: #2B2D25;
 }
 footer {
     text-align: center;
