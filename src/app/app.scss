@@ -1,21 +1,37 @@
 // styles applied on :host are applied on the current component, "app" in this case
 :host {
-    display: block;
+    // display: block;
+}
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 header {
-    padding: 8px 16px;
-    width: 100%;
-    font-size: 0.9em;
+
+    font-size: 1em;
+    line-height: 2em;
+    // background-color: darkslateblue;
+    width: 250px;
+    flex-shrink: 2;
+}
+nav ul {
+  list-style: none;
 }
 main {
-    height: 660px;
-    width: 495px;
+    height: 700px;
+    width: 525px;
     padding: 1em;
     text-align: center;
-    margin: auto;
+    margin-top: 10px;
     background-color: #2B2D25;
 }
 footer {
-    text-align: center;
+  align-self: flex-end;
+    text-align: right;
+    padding-right: 1em;
     font-size: 0.8em;
+    // background-color: darkolivegreen;
+    width: 250px;
+    flex-shrink: 2;
 }

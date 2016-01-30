@@ -1,3 +1,10 @@
 * {
+  box-sizing: border-box;
+  /*margin-top: 0;*/
+}
+.player-wrapper {
+  color: gold;
   background-color: teal;
+  padding: 1em;
+  min-height: 340px;
 }
