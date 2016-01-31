@@ -5,8 +5,8 @@ import {Player} from 'app/components/player/player';
 
 @Component({
   selector: 'scene',
-  template: require('app/components/scene/scene.html'),
-  styles: [require('app/components/scene/scene.css')],
+  template: require('./scene.html'),
+  styles: [require('./scene.css')],
   providers: [],
   directives: [Actor, Player],
   pipes: []

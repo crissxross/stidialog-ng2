@@ -6,7 +6,6 @@ import '../style/app.scss';
 
 import {Api} from './services/api/api';
 import {Home} from './components/home/home';
-import {About} from "./components/about/about";
 import {Scene} from './components/scene/scene';
 /*
  * App Component
@@ -22,7 +21,6 @@ import {Scene} from './components/scene/scene';
 })
 @RouteConfig([
     {path: '/', component: Home, name: 'Home'},
-    {path: '/About', component: About, name: 'About'},
     {path: '/Scene', component: Scene, name: 'Scene'}
 ])
 export class App {

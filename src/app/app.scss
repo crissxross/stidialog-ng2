@@ -1,6 +1,6 @@
 // styles applied on :host are applied on the current component, "app" in this case
 :host {
-    // display: block;
+    display: block;
 }
 .container {
   display: flex;
@@ -11,7 +11,7 @@ header {
 
     font-size: 1em;
     line-height: 2em;
-    // background-color: darkslateblue;
+    // background-color: midnightblue;
     width: 250px;
     flex-shrink: 2;
 }
@@ -21,7 +21,7 @@ nav ul {
 main {
     height: 700px;
     width: 525px;
-    padding: 1em;
+    padding: 10px;
     text-align: center;
     margin-top: 10px;
     background-color: #2B2D25;

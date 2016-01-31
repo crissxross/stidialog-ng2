@@ -3,8 +3,8 @@ import {Component} from 'angular2/core';
 
 @Component({
   selector: 'player',
-  template: require('app/components/player/player.html'),
-  styles: [require('app/components/player/player.css')],
+  template: require('./player.html'),
+  styles: [require('./player.css')],
   providers: [],
   directives: [],
   pipes: []
