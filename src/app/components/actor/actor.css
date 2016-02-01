@@ -3,8 +3,13 @@
   /*margin-top: 0;*/
 }
 .actor-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
   color: deeppink;
   background-color: darkslategrey;
   padding: 1em;
   min-height: 340px;
+}
+.actor-speaks {
+  align-self: flex-end;
 }
