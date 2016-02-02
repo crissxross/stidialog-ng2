@@ -14,7 +14,8 @@ import {DialogService} from 'app/services/dialog-service/dialog-service';
 })
 export class Scene implements OnInit {
 
-  dialogNodes: any[] = [];
+  dialogNodes: string[] = [];
+  meta: any[] = [];
 
   constructor(private _dialogService: DialogService) {
     // do stuff
@@ -22,12 +23,17 @@ export class Scene implements OnInit {
 
   ngOnInit() {
     console.log('Hello scene');
+    this.getMetaDialog();
     this.getDialog();
   }
 
   getDialog() {
     this._dialogService.getDialog()
-      .subscribe((dialogNodes: any[]) => this.dialogNodes = dialogNodes);
+      .subscribe((dialogNodes: string[]) => this.dialogNodes = dialogNodes);
   }
 
+  getMetaDialog() {
+    this._dialogService.getMetaDialog()
+      .subscribe((meta: any[]) => this.meta = meta);
+  }
 }

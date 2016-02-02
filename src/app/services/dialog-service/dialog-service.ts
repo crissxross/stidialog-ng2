@@ -17,6 +17,12 @@ export class DialogService {
       .catch(this.handleError);
   }
 
+  getMetaDialog() {
+    return this.http.get(this._dialogUrl)
+      .map((res: Response) => res.json().meta)
+      .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');

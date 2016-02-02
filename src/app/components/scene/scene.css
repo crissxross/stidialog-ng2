@@ -1,5 +1,5 @@
 * {
-  color: sandybrown;
+  color: dimgray;
   box-sizing: border-box;
 }
 .scene-wrapper {
@@ -9,4 +9,7 @@
   height: 100%;
   padding: 10px;
   background-color: #4E312D;
+}
+footer {
+  padding: 12px 0 0 0;
 }
