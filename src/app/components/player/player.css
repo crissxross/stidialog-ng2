@@ -6,11 +6,17 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  color: gold;
+  color: palegoldenrod;
   background-color: teal;
   padding: 1em;
   min-height: 340px;
 }
 .player-speaks {
-  /*align-self: flex-start;*/
+  color: gold;
+}
+.thinks {
+  font-style: italic;
+}
+.options {
+  font-style: normal;
 }

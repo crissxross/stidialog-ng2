@@ -4,6 +4,9 @@ Work in progress... based on **ng2-webpack** starter
 
 A prototype Dialogue Engine for *Stitched Up*
 
+### My notes re. ng2-webpack:
+* Images and assets are parsed and loaded from within the public directory
+
 ___
 
 ## ng2-webpack info
