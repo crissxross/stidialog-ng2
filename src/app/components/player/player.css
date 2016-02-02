@@ -5,13 +5,12 @@
 .player-wrapper {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-end;
+  justify-content: space-between;
   color: gold;
   background-color: teal;
   padding: 1em;
   min-height: 340px;
 }
-/* this is NOT right */
 .player-speaks {
-  align-self: flex-start;
+  /*align-self: flex-start;*/
 }
