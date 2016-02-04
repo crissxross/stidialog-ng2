@@ -1,12 +1,25 @@
 <div class="scene-wrapper">
-<!--<ul>
-  <li *ngFor="#node of dialogNodes">
-    {{ node.player.thinks }}
-  </li>
-</ul>-->
  <actor></actor>
  <player></player>
+
+ <!-- TEMPORARY -->
+ <!--<p>HERE: {{ actorDialogNodes | json }}</p>-->
+ <!--<ul>
+  <li *ngFor="#actorNode of actorDialogNodes">
+    <small>says {{ actorNode | json }}</small>
+  </li>
+</ul>-->
 </div>
+
 <footer>
- <small>Scene {{ meta.sceneId}} - {{meta.description }}</small>
+ <small>Scene info: id {{ meta.sceneId}} - {{meta.description }} - {{ meta.actorsInOrder }}</small>
+ <p>{{ dialogNodes[0] | json }}</p>
+ <!--<p>{{ dialogNodes[0].player.thinks }}</p>-->
+ <hr color=#333>
+<ul>
+  <li *ngFor="#node of dialogNodes">
+    <small>{{ node | json }}</small>
+    <!--<small>{{ node.player.thinks }}</small>-->
+  </li>
+</ul>
 </footer>

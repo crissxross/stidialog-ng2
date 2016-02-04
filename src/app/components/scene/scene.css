@@ -1,5 +1,5 @@
 * {
-  color: dimgray;
+  /*color: lightblue;*/
   box-sizing: border-box;
 }
 .scene-wrapper {
@@ -9,7 +9,9 @@
   height: 100%;
   padding: 10px;
   background-color: #4E312D;
+  color: lightblue;
 }
 footer {
   padding: 12px 0 0 0;
+  color: dimgray;
 }
