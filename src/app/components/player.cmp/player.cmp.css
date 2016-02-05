@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  /*margin-top: 0;*/
+}
+.player-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  color: palegoldenrod;
+  background-color: teal;
+  padding: 1em;
+  min-height: 340px;
+}
+.player-speaks {
+  color: gold;
+}
+.thinks {
+  font-style: italic;
+}
+.options {
+  font-style: normal;
+}

@@ -1,0 +1,19 @@
+<div class="scene-wrapper">
+
+<actor-cmp></actor-cmp>
+<!--<actor-cmp [node]="node.actor"></actor-cmp>-->
+<player-cmp></player-cmp>
+
+</div>
+
+<footer>
+  <small>{{ speechNodes[0].actor}}</small>
+  <hr color=#333>
+  <ul>
+    <li *ngFor="#node of speechNodes">
+      <actor-cmp [node]="node.actor"></actor-cmp>
+    </li>
+    <!--<li *ngFor="#node of speechNodes">{{ node.actor }}</li>-->
+    <li *ngFor="#node of speechNodes">{{ node.player}}</li>
+  </ul>
+</footer>

@@ -7,6 +7,7 @@ import '../style/app.scss';
 import {Api} from './services/api/api';
 import {Home} from './components/home/home';
 import {Scene} from './components/scene/scene';
+import {SceneCmp} from './components/scene.cmp/scene.cmp';
 /*
  * App Component
  * Top Level Component
@@ -21,7 +22,8 @@ import {Scene} from './components/scene/scene';
 })
 @RouteConfig([
     {path: '/', component: Home, name: 'Home'},
-    {path: '/Scene', component: Scene, name: 'Scene'}
+    {path: '/Scene', component: Scene, name: 'Scene'},
+    {path: '/SceneCmp', component: SceneCmp, name: 'SceneCmp'}
 ])
 export class App {
     url: string = 'http://www.crissxross.net/';
