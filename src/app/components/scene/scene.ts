@@ -1,7 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
 
-import {Actor} from 'app/components/actor/actor';
-import {Player} from 'app/components/player/player';
 import {DialogService} from 'app/services/dialog-service/dialog-service';
 import 'rxjs/add/operator/map';
 
@@ -10,7 +8,7 @@ import 'rxjs/add/operator/map';
   template: require('./scene.html'),
   styles: [require('./scene.css')],
   providers: [DialogService],
-  directives: [Actor, Player],
+  directives: [],
   pipes: []
 })
 export class Scene implements OnInit {
