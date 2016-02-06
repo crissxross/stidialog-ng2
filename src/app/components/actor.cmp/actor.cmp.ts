@@ -10,7 +10,7 @@ import {Component, Input} from 'angular2/core';
   pipes: []
 })
 export class ActorCmp {
-  @Input() node;
+  @Input() aNode: string[];
 
   constructor() {
     // do stuff

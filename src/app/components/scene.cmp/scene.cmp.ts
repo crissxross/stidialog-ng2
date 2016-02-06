@@ -1,4 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
+// import {UpperCasePipe} from 'angular2/common';
 
 import {ActorCmp} from 'app/components/actor.cmp/actor.cmp';
 import {PlayerCmp} from 'app/components/player.cmp/player.cmp';
@@ -15,8 +16,13 @@ import {DialogService} from 'app/services/dialog-service/dialog-service';
 })
 export class SceneCmp implements OnInit {
 
-  public speechNodes: any[];
+  public hardcodedNodes: any[];
+
+  public actorSpeech: string;
   public playerSpeech: string;
+
+  public actorNodes: string[];
+  public playerNodes: string[];
 
   constructor(private _dialogService: DialogService) {
     // do stuff
@@ -24,16 +30,30 @@ export class SceneCmp implements OnInit {
 
   ngOnInit() {
     console.log('Hello SceneCmp');
-    // this._dialogService.loadSpeeches();
-    this.speechNodes = speeches;
+    this.getActorSimpleDialog();
+    this.getPlayerSimpleDialog();
+    //  TEMPORARY for testing:
+    this.hardcodedNodes = speeches;
+
+    this.actorSpeech = "I am the actor and this speech is from SceneCmp.";
     this.playerSpeech = "I am the player and this speech is from SceneCmp.";
+  }
+
+  getActorSimpleDialog() {
+    this._dialogService.getActorSimpleDialog()
+      .subscribe((actor) => this.actorNodes = actor);
+  }
+
+  getPlayerSimpleDialog() {
+    this._dialogService.getPlayerSimpleDialog()
+      .subscribe((player) => this.playerNodes = player);
   }
 
 }
 
 let speeches = [
-      { "actor": "I am the actor. This is my first speechNode." },
-      { "player": "I am the player and this is my first speechNode." },
-      { "actor": "This is my second speechNode as the actor." },
-      { "player": "This is my second speechNode as the player." }
+      { "actor": "I am the actor. This is my first hardcodedNode." },
+      { "player": "I am the player and this is my first hardcodedNode." },
+      { "actor": "This is my second hardcodedNode as the actor." },
+      { "player": "This is my second hardcodedNode as the player." }
 ];

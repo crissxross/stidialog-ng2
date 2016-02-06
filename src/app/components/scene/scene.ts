@@ -15,7 +15,6 @@ export class Scene implements OnInit {
 
   public dialogNodes: any[] = [];
   public meta: any[] = [];
-  // public actorDialogNodes: string[] = [];
 
   constructor(private _dialogService: DialogService) {
     // do stuff
@@ -25,7 +24,6 @@ export class Scene implements OnInit {
     console.log('Hello scene');
     this.getMetaDialog();
     this.getDialog();
-    // this.getActorDialog();
   }
 
   getDialog() {
@@ -37,18 +35,4 @@ export class Scene implements OnInit {
     this._dialogService.getMetaDialog()
       .subscribe((meta: any[]) => this.meta = meta);
   }
-
-// UNFINISHED - ABANDONED
-  // getActorDialog() {
-  //   this._dialogService.getSceneDialog()
-  //     .map((dialogNodes: Array<any>) => dialogNodes.map(actor => actor.says))
-  //     .subscribe((meta: any[]) => this.meta = meta);
-  // }
-
-// NOT WORKING
-  // getActorDialog() {
-  //   this._dialogService.getDialog()
-  //     .map(dialogNodes.actor => actorDialogNodes)
-  //     .subscribe(data => this.actorDialogNodes = data);
-  // }
 }

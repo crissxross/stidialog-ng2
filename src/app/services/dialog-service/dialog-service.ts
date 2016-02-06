@@ -9,21 +9,25 @@ export class DialogService {
 
   constructor(private http: Http) { }
 
-    private _dialogUrl = '/mock-data/mock-dialog.json';
+  private _dialogUrl = '/mock-data/mock-dialog.json';
 
-  // HERE is TEMPORARY - hard coding data for now...
-  // loadSpeeches() {
-  //   let speechNodes = [
-  //     { "actor": "I am the actor. This is my first speechNode." },
-  //     { "player": "I am the player and this is my first speechNode." },
-  //     { "actor": "This is my second speechNode as the actor." },
-  //     { "player": "This is my second speechNode as the player." }
-  //   ];
-  // }
+  private _simpleUrl = '/mock-data/simple-dialog.json';
 
 
-// ----------------------------------------------------------------
-  // BELOW IS FOR HTTP getting dialog json ------------------------
+  getActorSimpleDialog() {
+    return this.http.get(this._simpleUrl)
+      .map((res: Response) => res.json().actor)
+      .catch(this.handleError);
+  }
+
+  getPlayerSimpleDialog() {
+    return this.http.get(this._simpleUrl)
+      .map((res: Response) => res.json().player)
+      .catch(this.handleError);
+  }
+
+  // ----------------------------------------------------------------
+  // BELOW is for HTTP getting mock-dialog.json ------------------------
 
 
   getDialog() {
@@ -38,11 +42,6 @@ export class DialogService {
       .catch(this.handleError);
   }
 
-  // getActorDialog() {
-  //   return this.http.get(this._dialogUrl)
-  //     .map((res: Response) => res.json().dialogNodes.actor)
-  //     .catch(this.handleError);
-  // }
 
   getSceneDialog() {
     return this.http.get(this._dialogUrl)

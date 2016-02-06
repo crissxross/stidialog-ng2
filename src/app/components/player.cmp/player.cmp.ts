@@ -10,8 +10,8 @@ import {Component, Input} from 'angular2/core';
   pipes: []
 })
 export class PlayerCmp {
-
-  @Input() pSpeech: string;
+  // @Input() pSpeech: string;
+  @Input() pNode;
 
   constructor() {
     // do stuff
