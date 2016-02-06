@@ -16,6 +16,7 @@ import {DialogService} from 'app/services/dialog-service/dialog-service';
 export class SceneCmp implements OnInit {
 
   public speechNodes: any[];
+  public playerSpeech: string;
 
   constructor(private _dialogService: DialogService) {
     // do stuff
@@ -25,6 +26,7 @@ export class SceneCmp implements OnInit {
     console.log('Hello SceneCmp');
     // this._dialogService.loadSpeeches();
     this.speechNodes = speeches;
+    this.playerSpeech = "I am the player and this speech is from SceneCmp.";
   }
 
 }

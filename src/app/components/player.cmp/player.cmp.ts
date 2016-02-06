@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, Input} from 'angular2/core';
 
 
 @Component({
@@ -10,6 +10,8 @@ import {Component} from 'angular2/core';
   pipes: []
 })
 export class PlayerCmp {
+
+  @Input() pSpeech: string;
 
   constructor() {
     // do stuff
