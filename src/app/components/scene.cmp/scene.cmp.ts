@@ -23,6 +23,8 @@ export class SceneCmp implements OnInit {
   public actorNodes: string[];
   public playerNodes: string[];
 
+  public playerThought: string;
+
   constructor(private _dialogService: DialogService) {
     // do stuff
   }
@@ -32,6 +34,7 @@ export class SceneCmp implements OnInit {
     this.getActorSimpleDialog();
     this.getPlayerSimpleDialog();
     //  TEMPORARY for testing:
+    this.playerThought = "I am thinking. This is my private player thought.";
     // this.hardcodedNodes = speeches;
 
     // this.actorSpeech = "I am the actor and this speech is from SceneCmp.";

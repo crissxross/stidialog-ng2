@@ -12,6 +12,7 @@ import {Component, Input} from 'angular2/core';
 export class PlayerCmp {
   // @Input() pSpeech: string;
   @Input() pNode;
+  @Input() pThought: string;
 
   constructor() {
     // do stuff
