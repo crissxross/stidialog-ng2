@@ -5,8 +5,6 @@
     [pNode]="playerNodes"
     [pThought]="playerThought">
 </player-cmp>
-<!--<actor-cmp [aNode]="actorSpeech"></actor-cmp>-->
-<!--<player-cmp [pNode]="playerSpeech"></player-cmp>-->
 
 </div>
 
@@ -21,12 +19,4 @@
   <small>{{ actorNodes | json }}</small>
   <small>{{ playerNodes | json }}</small>
 
-  <!--<small>{{ hardcodedNodes[0].actor}}</small>-->
-  <!--<ul>
-    <li *ngFor="#node of hardcodedNodes">
-      <actor-cmp [node]="node.actor"></actor-cmp>
-    </li>
-    <li *ngFor="#node of hardcodedNodes">{{ node.actor }}</li>
-    <li *ngFor="#node of hardcodedNodes">{{ node.player}}</li>
-  </ul>-->
 </footer>
