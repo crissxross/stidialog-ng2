@@ -1,22 +1,24 @@
 <div class="scene-wrapper">
 
-<!--<actor-cmp [aNode]="actorSpeech"></actor-cmp>-->
 <actor-cmp [aNode]="actorNodes"></actor-cmp>
-<!--<player-cmp [pNode]="playerSpeech"></player-cmp>-->
 <player-cmp [pNode]="playerNodes"></player-cmp>
+<!--<actor-cmp [aNode]="actorSpeech"></actor-cmp>-->
+<!--<player-cmp [pNode]="playerSpeech"></player-cmp>-->
 
 </div>
 
 <footer>
-  <small>{{ hardcodedNodes[0].actor}}</small>
   <hr color=#333>
-  <!--<small>{{ playerNodes }}</small>-->
-  <hr color=#000>
   <ul>
     <li *ngFor="#node of actorNodes">{{ node }}</li>
     <li *ngFor="#node of playerNodes">{{ node }}</li>
   </ul>
 
+  <hr color=#000>
+  <small>{{ actorNodes | json }}</small>
+  <small>{{ playerNodes | json }}</small>
+
+  <!--<small>{{ hardcodedNodes[0].actor}}</small>-->
   <!--<ul>
     <li *ngFor="#node of hardcodedNodes">
       <actor-cmp [node]="node.actor"></actor-cmp>

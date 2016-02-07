@@ -17,12 +17,14 @@ export class DialogService {
   getActorSimpleDialog() {
     return this.http.get(this._simpleUrl)
       .map((res: Response) => res.json().actor)
+      .do(actor => console.log(actor)) // see results in console
       .catch(this.handleError);
   }
 
   getPlayerSimpleDialog() {
     return this.http.get(this._simpleUrl)
       .map((res: Response) => res.json().player)
+      .do(player => console.log(player)) // see results in console
       .catch(this.handleError);
   }
 
