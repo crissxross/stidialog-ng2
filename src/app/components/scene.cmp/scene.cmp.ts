@@ -1,4 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
+import {Observable} from 'rxjs/Observable';
 
 import {ActorCmp} from 'app/components/actor.cmp/actor.cmp';
 import {PlayerCmp} from 'app/components/player.cmp/player.cmp';
@@ -15,10 +16,12 @@ import {DialogService} from 'app/services/dialog-service/dialog-service';
 })
 export class SceneCmp implements OnInit {
 
-  public actorNodes: string[];
-  public playerNodes: string[];
+  public actorNodes: Observable<string[]>;
+  public playerNodes: Observable<string[]>;
 
   public playerThought: string;
+
+  // public dialogNodes: string[];
 
   constructor(private _dialogService: DialogService) {
     // do stuff
@@ -31,15 +34,16 @@ export class SceneCmp implements OnInit {
     //  TEMPORARY for testing:
     this.playerThought = "I am thinking. This is my private player thought.";
   }
+// NOTE: the async pipe does the subscribe
 
   getActorSimpleDialog() {
-    this._dialogService.getActorSimpleDialog()
-      .subscribe((actor) => this.actorNodes = actor);
+    this.actorNodes = this._dialogService.getActorSimpleDialog()
+      // .subscribe((actor) => this.actorNodes = actor);
   }
 
   getPlayerSimpleDialog() {
-    this._dialogService.getPlayerSimpleDialog()
-      .subscribe((player) => this.playerNodes = player);
+    this.playerNodes = this._dialogService.getPlayerSimpleDialog()
+      // .subscribe((player) => this.playerNodes = player);
   }
 
 }

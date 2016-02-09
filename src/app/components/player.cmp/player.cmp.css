@@ -26,3 +26,8 @@ button {
   border-radius: 10px;
   padding: 0.5em;
 }
+button:focus {
+  background-color: #0F7270;
+  outline: 0;
+  color: #FEE57E;
+}

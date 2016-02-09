@@ -5,7 +5,7 @@
 .actor-wrapper {
   display: flex;
   flex-flow: row nowrap;
-  color: deeppink;
+  color: #FC6F7E;
   background-color: darkslategrey;
   padding: 1em;
   min-height: 340px;
