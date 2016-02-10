@@ -33,17 +33,17 @@ export class SceneCmp implements OnInit {
     this.getPlayerSimpleDialog();
     //  TEMPORARY for testing:
     this.playerThought = "I am thinking. This is my private player thought.";
+
+    // this._dialogService.getIntervalActorDialog();
   }
 // NOTE: the async pipe does the subscribe
 
   getActorSimpleDialog() {
-    this.actorNodes = this._dialogService.getActorSimpleDialog()
-      // .subscribe((actor) => this.actorNodes = actor);
+    this.actorNodes = this._dialogService.getActorSimpleDialog();
   }
 
   getPlayerSimpleDialog() {
-    this.playerNodes = this._dialogService.getPlayerSimpleDialog()
-      // .subscribe((player) => this.playerNodes = player);
+    this.playerNodes = this._dialogService.getPlayerSimpleDialog();
   }
 
 }

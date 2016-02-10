@@ -10,13 +10,13 @@
 
 <footer>
   <hr color=#333>
-  <ul>
-    <li *ngFor="#node of actorNodes | async">{{ node }}</li>
-    <li *ngFor="#node of playerNodes | async">{{ node }}</li>
-  </ul>
-
-  <hr color=#000>
   <small>{{ actorNodes | async | json }}</small>
   <small>{{ playerNodes | async | json }}</small>
-
+  <hr color=#333>
+  <small>
+  <ul>
+    <!--<li *ngFor="#node of actorNodes | async">{{ node }}</li>-->
+    <li *ngFor="#node of playerNodes | async">{{ node }}</li>
+  </ul>
+  </small>
 </footer>
