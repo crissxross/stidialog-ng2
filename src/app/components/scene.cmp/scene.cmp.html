@@ -9,10 +9,15 @@
 </div>
 
 <footer>
+  <small>Scene Meta Info:<br>
+  {{ sceneMeta | async | json }}
+  </small>
+
   <hr color=#333>
-  <small>{{ actorNodes | async | json }}</small>
-  <small>{{ playerNodes | async | json }}</small>
-  <hr color=#333>
+  <small><strong>Simple Dialog:</strong>
+  <br>{{ actorNodes | async | json }}
+  <br>{{ playerNodes | async | json }}</small>
+  <!--<hr color=#333>-->
   <small>
   <ul>
     <!--<li *ngFor="#node of actorNodes | async">{{ node }}</li>-->

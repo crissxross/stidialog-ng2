@@ -4,29 +4,51 @@ import {Observable} from 'rxjs/Observable';
 // import 'rxjs/add/operator/map';
 import 'rxjs/Rx'; // add all operators to Observable - temporary
 
-// NOTE need to inject SceneDataService into this service
-// AND change this service methods below
+import {SceneDataService} from '../scene-data-service/scene-data-service';
+
 
 @Injectable()
 export class DialogService {
 
-  private _dialogUrl = '/mock-data/mock-dialog.json';
+  public dialogNodes;
+  public sceneMeta;
+
+  // private _dialogUrl = '/mock-data/mock-dialog.json';
   private _simpleUrl = '/mock-data/simple-dialog.json';
   // private actorSpeeches: string[];
 
-  constructor(private http: Http) { }
+  constructor(private sceneDataService: SceneDataService, private http: Http) { }
+
+  getSceneDialog() {
+    this.dialogNodes = this.sceneDataService.getSceneDialog();
+    console.log(this.dialogNodes);
+    return this.dialogNodes;
+  }
+
+  getSceneMeta() {
+    let scMetaData = this.sceneDataService.getSceneMeta();
+    console.log(scMetaData);
+    return this.sceneMeta = Observable.fromPromise(scMetaData);
+  }
+
+
+
+
+
+
+  // ---------- BELOW uses HTTP (this will be changing/removing) ------------
 
   getActorSimpleDialog() {
     return this.http.get(this._simpleUrl)
       .map((res: Response) => res.json().actor[0]) // TESTING
-      .do(actor => console.log(actor)) // see results in console
+      // .do(actor => console.log(actor)) // see results in console
       .catch(this.handleError);
   }
 
   getPlayerSimpleDialog() {
     return this.http.get(this._simpleUrl)
       .map((res: Response) => res.json().player)
-      .do(player => console.log(player)) // see results in console
+      // .do(player => console.log(player)) // see results in console
       .catch(this.handleError);
   }
 
@@ -41,24 +63,24 @@ export class DialogService {
   // BELOW is for HTTP getting mock-dialog.json ------------------------
 
 
-  getDialog() {
-    return this.http.get(this._dialogUrl)
-      .map((res: Response) => res.json().dialogNodes)
-      .catch(this.handleError);
-  }
+  // getDialog() {
+  //   return this.http.get(this._dialogUrl)
+  //     .map((res: Response) => res.json().dialogNodes)
+  //     .catch(this.handleError);
+  // }
 
-  getMetaDialog() {
-    return this.http.get(this._dialogUrl)
-      .map((res: Response) => res.json().meta)
-      .catch(this.handleError);
-  }
+  // getMetaDialog() {
+  //   return this.http.get(this._dialogUrl)
+  //     .map((res: Response) => res.json().meta)
+  //     .catch(this.handleError);
+  // }
 
 
-  getSceneDialog() {
-    return this.http.get(this._dialogUrl)
-      .map((res: Response) => res.json())
-      .catch(this.handleError);
-  }
+  // getSceneDialog() {
+  //   return this.http.get(this._dialogUrl)
+  //     .map((res: Response) => res.json())
+  //     .catch(this.handleError);
+  // }
 
   private handleError(error: Response) {
     console.error(error);
@@ -85,6 +107,7 @@ let speeches = [
 // "... refCount. This is auto connect method, that will start broadcasting as soon as there are more than one subscriber."
 // BUT the whole thing below does NOT work properly - unless I comment out - why??
 // Is it because the default behaviour has changed in rx5?
+// UNCOMMENT THE FOLLOWING EXPERIMENT ************>>>>>>
 var clock = Observable.interval(1000)
   .take(speeches.length - 1).map(x => x + 1).startWith(0);
   // .publish().refCount();

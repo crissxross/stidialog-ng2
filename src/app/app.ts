@@ -5,6 +5,7 @@ import {FORM_PROVIDERS} from 'angular2/common';
 import '../style/app.scss';
 
 import {Api} from './services/api/api';
+import {SceneDataService} from './services/scene-data-service/scene-data-service';
 import {Home} from './components/home/home';
 import {Scene} from './components/scene/scene';
 import {SceneCmp} from './components/scene.cmp/scene.cmp';
@@ -14,7 +15,7 @@ import {SceneCmp} from './components/scene.cmp/scene.cmp';
  */
 @Component({
     selector: 'app', // <app></app>
-    providers: [...FORM_PROVIDERS, Api],
+    providers: [...FORM_PROVIDERS, Api, SceneDataService],
     directives: [...ROUTER_DIRECTIVES],
     pipes: [],
     styles: [require('./app.scss')],

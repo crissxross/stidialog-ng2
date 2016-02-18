@@ -16,23 +16,24 @@ export class Scene implements OnInit {
   public dialogNodes: any[] = [];
   public meta: any[] = [];
 
-  constructor(private _dialogService: DialogService) {
-    // do stuff
-  }
+  // constructor(private _dialogService: DialogService) { }
+  constructor() {
+      // do stuff maybe
+    }
 
   ngOnInit() {
     console.log('Hello scene');
-    this.getMetaDialog();
-    this.getDialog();
+    // this.getMetaDialog();
+    // this.getDialog();
   }
 
-  getDialog() {
-    this._dialogService.getDialog()
-      .subscribe((dialogNodes: any[]) => this.dialogNodes = dialogNodes);
-  }
+  // getDialog() {
+  //   this._dialogService.getDialog()
+  //     .subscribe((dialogNodes: any[]) => this.dialogNodes = dialogNodes);
+  // }
 
-  getMetaDialog() {
-    this._dialogService.getMetaDialog()
-      .subscribe((meta: any[]) => this.meta = meta);
-  }
+  // getMetaDialog() {
+  //   this._dialogService.getMetaDialog()
+  //     .subscribe((meta: any[]) => this.meta = meta);
+  // }
 }

@@ -16,6 +16,8 @@ import {DialogService} from 'app/services/dialog-service/dialog-service';
 })
 export class SceneCmp implements OnInit {
 
+  public sceneMeta: Observable<any>;
+
   public actorNodes: Observable<string[]>;
   public playerNodes: Observable<string[]>;
 
@@ -29,14 +31,21 @@ export class SceneCmp implements OnInit {
 
   ngOnInit() {
     console.log('Hello SceneCmp');
+    this.getSceneMeta();
     this.getActorSimpleDialog();
     this.getPlayerSimpleDialog();
     //  TEMPORARY for testing:
     this.playerThought = "I am thinking. This is my private player thought.";
 
+    this._dialogService.getSceneDialog();
+
     // this._dialogService.getIntervalActorDialog();
   }
 // NOTE: the async pipe does the subscribe
+
+  getSceneMeta() {
+    this.sceneMeta = this._dialogService.getSceneMeta();
+  }
 
   getActorSimpleDialog() {
     this.actorNodes = this._dialogService.getActorSimpleDialog();
