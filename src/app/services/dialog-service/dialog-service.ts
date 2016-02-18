@@ -4,6 +4,8 @@ import {Observable} from 'rxjs/Observable';
 // import 'rxjs/add/operator/map';
 import 'rxjs/Rx'; // add all operators to Observable - temporary
 
+// NOTE need to inject SceneDataService into this service
+// AND change this service methods below
 
 @Injectable()
 export class DialogService {
