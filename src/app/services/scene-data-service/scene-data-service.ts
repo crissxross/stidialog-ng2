@@ -1,7 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
-// Don't need Response below if not using observables in this service
-// import {Http, Response} from 'angular2/http';
+// Don't need Response from 'angular2/http' if not using observables in this service
 
 @Injectable()
 export class SceneDataService {
@@ -9,7 +8,7 @@ export class SceneDataService {
   // Using a PROMISE because SQLite (Ionic) returns a promise
 
   private _sceneUrl = '/mock-data/mock-dialog.json';
-  // private _simpleUrl = '/mock-data/simple-dialog.json';
+  private _simpleUrl = '/mock-data/simple-dialog.json';
 
   constructor(private http: Http) { }
 
@@ -33,12 +32,26 @@ export class SceneDataService {
       });
   }
 
-  // getSceneData() {
-  //   return this.http.get(this._sceneUrl)
-  //     .toPromise()
-  //     .then(res => res.json().data, this.handleError)
-  //     .then(data => { console.log(data); return data; });
-  // }
+
+  getActorSimpleDialog() {
+    return this.http.get(this._simpleUrl)
+      .toPromise()
+      .then(res => res.json().actor[0], this.handleError)
+      .then(data => {
+        // console.log(data);
+        return data;
+      });
+  }
+
+  getPlayerSimpleDialog() {
+    return this.http.get(this._simpleUrl)
+      .toPromise()
+      .then(res => res.json().player, this.handleError)
+      .then(data => {
+        // console.log(data);
+        return data;
+      });
+  }
 
   private handleError(error: any) {
     console.error(error);
