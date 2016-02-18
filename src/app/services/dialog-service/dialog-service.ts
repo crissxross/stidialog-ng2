@@ -34,8 +34,6 @@ export class DialogService {
 
 
 
-
-
   // ---------- BELOW uses HTTP (this will be changing/removing) ------------
 
   getActorSimpleDialog() {
@@ -123,18 +121,18 @@ setTimeout(function () {
 
 
 // --------- Interesting but NOT what I was after (uses SCAN)
-// let i = 0;
+let i = 0;
 
-// Observable.interval(1000).take(6)
-//   .scan(function(speechArray) {
-//     let speech = speeches[i];
-//     i++;
-//     speechArray.push(speech);
-//     return speechArray;
-//   }, [])
-//   .subscribe(function(speechArray) {
-//     console.log(speechArray);
-//   })
+Observable.interval(1000).take(6)
+  .scan(function(speechArray) {
+    let speech = speeches[i];
+    i++;
+    speechArray.push(speech);
+    return speechArray;
+  }, [])
+  .subscribe(function(speechArray) {
+    console.log(speechArray);
+  })
 
 
 // ---------- forEach LOOP
@@ -160,10 +158,10 @@ setTimeout(function () {
 //   .subscribe(speechStream => console.log('SPEECHSTREAM', speechStream));
 
 // --------------- BASIC INTERVAL COUNTER
-// var counter = Observable.interval(1000).take(6);
-// counter.subscribe(function(i) {
-//     console.log('Counter subscription:', i);
-// });
+var counter = Observable.interval(1000).take(6);
+counter.subscribe(function(i) {
+    console.log('Counter subscription:', i);
+});
 
 // ---------- BASIC OBS FROM ARRAY
 // Observable.fromArray([1, 2, 3, 4, 5])
