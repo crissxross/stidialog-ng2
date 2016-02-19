@@ -9,6 +9,7 @@ import {SceneDataService} from './services/scene-data-service/scene-data-service
 import {Home} from './components/home/home';
 import {Scene} from './components/scene/scene';
 import {SceneCmp} from './components/scene.cmp/scene.cmp';
+import {Experiments} from './components/experiments/experiments';
 /*
  * App Component
  * Top Level Component
@@ -24,7 +25,8 @@ import {SceneCmp} from './components/scene.cmp/scene.cmp';
 @RouteConfig([
     {path: '/', component: Home, name: 'Home'},
     {path: '/Scene', component: Scene, name: 'Scene'},
-    {path: '/SceneCmp', component: SceneCmp, name: 'SceneCmp'}
+    { path: '/SceneCmp', component: SceneCmp, name: 'SceneCmp' },
+    {path: '/Experiments', component: Experiments, name: 'Experiments'}
 ])
 export class App {
     url: string = 'http://www.crissxross.net/';
